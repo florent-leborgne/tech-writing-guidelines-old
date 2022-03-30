@@ -1,28 +1,25 @@
 {
-    "mission": "Technical documentation and UI copy guidelines",
-    "id": "guide",
-    "landingPageId": "guideHome",
-    "icon": "paperClip",
-    "description": "Guidelines for writing technical docs and UI copy.",
-    "items": [
-      {
-        "category": "Home",
-        "items": [
-          { "id": "guideHome" }
-        ]
-      },
-      {
-        "category": "Technical documentation",
-        "items": [
-          { "id": "techDocs" }
-        ]
-      },
-      {
-        "category": "UI copy",
-        "items": [
-          { "id": "uiCopy" },
-          { "id": "inProdHelp" }
-        ]
-      }
-    ]
+  "mission": "Technical documentation and UI copy guidelines",
+  "id": "contentDesignSystem",
+  "landingPageId": "guideHome",
+  "icon": "paperClip",
+  "description": "Guidelines for writing technical docs and UI copy.",
+  "items": [
+    {
+      "label": "General guidelines",
+      "items": [
+        { "id": "guideHome" },
+        { "id": "voiceAndTone" },
+        { "id": "accessibility" }
+      ]
+    },
+    {
+      "label": "Technical documentation",
+      "items": [{ "id": "techDocs" }]
+    },
+    {
+      "label": "UI copy",
+      "items": [{ "id": "uiCopy" }, { "id": "inProdHelp" }]
+    }
+  ]
 }
