@@ -1,5 +1,5 @@
 {
-  "mission": "Technical documentation and UI copy guidelines",
+  "mission": "Content Design",
   "id": "contentDesignSystem",
   "landingPageId": "guideHome",
   "icon": "paperClip",
@@ -10,7 +10,8 @@
       "items": [
         { "id": "guideHome" },
         { "id": "voiceAndTone" },
-        { "id": "accessibility" }
+        { "id": "contentAccessibility" },
+        { "id": "contentInclusivity" }
       ]
     },
     {

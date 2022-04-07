@@ -1,153 +1,97 @@
 ---
-id: accessibility
-slug: /guide/accessibility
-title: Guidelines for writing accessible content
+id: contentAccessibility
+slug: /guide/content-accessibility
+title: Accessibility
 description: Learn how to write accessible content for our product UI and documentation.
 date: 2022-03-16
 tags: ["UI copy"]
 ---
 
-These guidelines are intended for web developers, designers and content authors. This is a
-list of common tips and tricks on accessibility; it is not exhaustive and does not replace
-the official standards. In general, we follow the
+These guidelines are intended for all content authors, whether you are a developer, a designer or a writer. 
+This page shares common tips and tricks for writing accessible content. 
+It is not exhaustive and does not replace the official
 [WCAG 2.0 guidelines](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#guidelines).
 
+<DocCallOut>
 Accessibility is a broad topic. Content is only a part of it. Check the
 [EUI documentation](https://eui.elastic.co/#/guidelines/accessibility) for more general
 accessibility guidelines.
+</DocCallOut>
 
-## Writing for accessibility
+## Why does it matter?
 
-### Alt text
+Our users and readers are diverse, with different abilities, and disabilities. 
+They also interact with our content in different ways: screen readers, mobile devices, Braille, and so on. The list is long, and always evolving. 
 
-Alt text is **mandatory** for all **images, audios, or videos**.
+As content authors, it is our responsibility to provide them with [perceivable, operable, understandable, and robust content](https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head).
 
-Make sure that concepts and tasks are as clear as possible even without any media. To
-enable content for screen readers or Braille output devices, use ALT text to describe the
-media. ALT text is supported by most document formats, including HTML, Microsoft Word, and
-Adobe PDF.
+## Guidelines
 
-**Do**
+✔️ **Make your content quickly scannable.** A clear structure and meaningful words will tell users if the content is relevant to them within seconds. Use unique headings.
 
-- Be concise and accurate.
-- If an image contains text, repeat that text in the description.
-- If the media has been used as a link, describe the link destination.
-- If an image is for decorative purposes, describe it as “decorative”.
-- For audios and videos, add captions and create scripts that describe the visual content.
+✔️ **Add alt text for all images, icons and media files.** Screen readers, Braille output devices, and search engines will love concise, accurate alt text that describe what cannot always be displayed, viewed or heard on screen. 
+<DocAccordion buttonContent="Examples">
+  ✔️ **Do:** 
+
+  ```html
+  <img src="signup.png" alt="Signup page for Elastic Cloud" />
+  ```
+
+Note: Do not use special characters such as backticks (`) in alt text. They are known to cause
+  formatting issues when building pages.
+
+  For audios and videos, add captions and create scripts that describe the visual content.
   Provide the script as a separate description track, either as timed text or recorded
   narration. There are many free, easy-to-use tools available that support the process of
   transcribing and captioning videos. For more information, refer to
   [Creating Accessible Videos](https://www.washington.edu/accessibility/videos/).
 
-**Examples**
+</DocAccordion>
 
-For example, in HTML:
+✔️ **Use plain language.** Users read our content to perform their tasks. Jargon and complex sentences will confuse them or, at best, slow them down. Expand acronyms when first written.
 
-```html
-<img src="signup.png" alt="Signup page for Elastic Cloud" />
-```
+✔️ **Use meaninglful link text.** Descriptive text instead of "click here", "read more", or even a raw URL for a link makes it easier for users to understand what to expect when they'll open it. Screen
+readers jump between links by generating a list of them, and spell out URLs.
+<DocAccordion buttonContent="Examples">
+  ❌ **Don't:** "[Click here](https://www.elastic.co) and make search your best ally."
+    
+  ✔️ **Do:** "Visit [Elastic.co](https://www.elastic.co) and make search your best ally."
 
-**Don't**
+</DocAccordion>
 
-- Do not use special characters such as backticks (`) in alt text. They are known to cause
-  formatting issues when building pages.
+✔️ **Use device agnostic language.** Users can access content and products in many ways. We do not know if they use a mouse, a keyboard, a tablet, and so on. 
+<DocAccordion buttonContent="Examples">
+  ❌ **Don't:** "Enter a description and click the **Next** button."
+    
+  ✔️ **Do:** "Enter a description and select **Next**."
 
-### Use meaningful links
+</DocAccordion>
 
-**General rule**
-
-Avoid "here", "Read more", "Learn more", or anything that doesn't describe what to expect
-behind as link text. The link should clearly describe what the URL is about. Screen
-readers jump between links by generating a list of them. Unless they are accompanied by a
-descriptive tooltip, hearing a list of “Click here" links is not helpful. Linked text
-should be concise and descriptive.
-
-Avoid raw URLs (https://website.com/page), because screen readers move through a document
-like a cursor and vocalize every single letter.
-
-- **Don't**: Click [here](https://www.elastic.co/support/welcome) to open a support case.
-- **Do**: Go to [Working with Elastic Support](https://www.elastic.co/support/welcome) to
-  open a support case.
-
-**Calls to action (CTA)**
-
-If a link is a CTA, accept shorter descriptions, such as “Download report”. It's OK to use
-“Read more” or “Learn more” if used as CTA for introductory content.
-
-**Download links**
-
-If a link is a download, include details about the document name, type, and file size
-whenever possible; for example, “Download text description of the 'Access and Inclusion is
-Good for Business' video (Word, 165KB)”.
-
-### Use unique headings
-
-Screen readers recognize and announce the heading levels in the order in which they
-appear, and cannot identify headings if they are solely distinguished by visual cues such
-as different fonts.
-
-- Headings should read as statements that can stand alone and be understood independently
-  from other headings or sections of the page.
-- Use concise and descriptive titles that are relevant to the goals and audience of the
-  content.
-- Don't write headings as interrupted sentences that continue in the body text. Also,
-  avoid writing headings as incomplete statements that “flow” from one heading to the
-  next. This can make the flow of the text unclear for users who are using screen readers.
-- Break down blocks of information, and make it easier to revisit a certain topic.
-- Structure headings from H1 to H3.
-
-### Structure your content well
-
-- Left-align text to avoid uneven spacing between letters and words.
-- Use paragraphs and lists to group information, provide orientation, and improve
-  readability. Lists can be ordered (numbered) and unordered (bulleted).
-- Tag tables correctly:
-  - Header cells marked with \<th\>
-  - Data cells marked with \<td\>
-- Tables should always have a title. Code blocks don't need to.
-- Consider how your information will be displayed on various mobile devices.
-
-### Improve readability
-
-**Do**
-
-- Use clear, simple language.
-- Expand acronyms.
-- Use clean typography.
-- Provide the right amount of space between lines of text.
-
-**Don't**
-
-- Avoid jargon, metaphors, and Latin abbreviations.
-- Limit the use of bold and never underline text. Reserve underlining for identifying
-  links.
-- Avoid changing the typeface from that specified by the website.
-- Avoid using all caps. Readability is reduced with all caps because all words have a
-  uniform rectangular shape, meaning readers can't identify words by their shape.
-- Support text resizing.
-
-### Rethink some terminology
-
-- Avoid terms that include actions: click, tap, press, see .Try replacing them with:
-  choose, select, check.
-- Avoid terms that indicate directions: above, below, left, right, beside. Try rewording
-  the text based on the context:
-  - Don't: "Update your index mapping as you can see below to get the full benefit of
+✔️ **Avoid directional language.** Above, below, left, right, and so on. All these terms assume that the layout never varies and that users actually see it, and that they see it the way you think they do. What about disabilities or responsiveness?
+<DocAccordion buttonContent="Examples">
+  ❌ **Don't:** "Update your index mapping as you can see below to get the full benefit of
     aggregating and searching for feature importance."
-  - Do: "To benefit from aggregating and searching for feature importance, update your
+
+  ✔️ **Do:** "To benefit from aggregating and searching for feature importance, update your
     index mapping as shown in this code example: [code example]"
-- Avoid sight- or hearing-related language (see more, hear about, etc.), especially in
-  headings.
+
+</DocAccordion>
+
+## Terms
+
+| Avoid                 | Use instead               |
+| --------------------- | ------------------------- |
+| Click, tap            | Select, choose            |
+| Above                 | Preceding, previous       |
+| Below, under          | Following, further, later |
+| See                   | Check, refer to           |
+| Hear (hear about...)  | Learn                     |
+
 
 ## Testing content for accessibility
 
-### When?
-
-Test early, test often. Accessibility evaluations should start right at the beginning of
-product design and be included in subsequent development iterations through to final
-delivery.
-
-### How?
+Test as early and often as possible. It is always a good exercise to spot improvements early and get good habits. 
+Here are a few methods that you can use to test content:
 
 **Navigate a website or app with only a keyboard** to ensure all content is accessible and
 that a skip navigation link exists.
@@ -156,11 +100,12 @@ that a skip navigation link exists.
 disabilities, are accessing the web using phones, tablets, and other mobile devices. Test
 your website using mobile devices, and when doing so, be sure to check for accessibility.
 
+You don't need an actual phone to do this. The Chrome dev tools, for example, are a precious ally to test various layouts.
+
 **Try a screen reader** to understand how users navigate websites using one of the screen
 reader/browser combinations listed in the
-
 <DocLink
-  id="accessibility"
+  id="contentAccessibility"
   section="assistive-technologies"
   text="Assistive technologies"
 /> section.
@@ -184,14 +129,3 @@ is used to enlarge the monitor and make reading easy for vision-impaired users.
 website by using only the keyboard. Also check out
 [this list of special keyboards](https://bltt.org/keyboards-for-disabled-people/) made for
 users who have motor control difficulties.
-
-### Accessibility testing with automation
-
-Automated testing is a great way to start weaving accessibility into your website, with
-the ultimate goal of shifting more and more towards the UX and discovery process. These
-are some of the many open source accessibility tools:
-
-- [NV Access](https://www.nvaccess.org/)
-- [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
-- [axe™ - The Standard in Accessibility Testing](https://www.deque.com/axe/)
-- [Pa11y - automated accessibility testing pal](https://pa11y.org)
